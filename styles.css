@@ -1,20 +1,33 @@
 * {
 	margin: 0;
 	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
 }
 
 body > h1 {
+	width: 100%;
 	margin-top: 2em;
 	display: flex;
 	justify-content: center;
 }
+
+/* nav */
 
 nav {
 	margin-top: 2em;
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	background: black;
+	background: #2ecc71;
+	padding: .8em;
+	width: 100vw;
+	margin-bottom: 2em;
 }
 
 nav h1 {
@@ -30,11 +43,12 @@ nav ul {
 }
 
 nav li {
-	margin: 1em;
+	padding: .8em;
 	list-style: none;
 }
 
 nav a {
+	padding: 1em .5em 1em .5em;
 	text-decoration: none;
 	color: white;
 	cursor: pointer;
@@ -44,11 +58,71 @@ nav a:hover {
 	text-decoration: underline;
 }
 
-.products {
-	flex-direction: column;
-	background: red;
+nav li ul {
+	flex-direction: row;
+	display: none;
+	font-weight: 100;
+	background: #2ecc71;
 }
 
-.products li {
-	display: none;
+nav li:hover ul:first-of-type {
+	display: block;
+	padding: 2em 1em 1em 0;
+	position: absolute;
+}
+
+/* login */
+
+form {
+	background: #efefef;
+	padding: 2em;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 20em;
+}
+
+form input {
+	font-size: 1em;
+	padding: .8em;
+	border: none;
+	margin: .3em 0 1em;
+}
+
+form input[type="checkbox"] {
+	padding: 2em;
+}
+
+form input:focus { 
+	outline:none;
+}
+
+form div label,
+form a {
+	font-size: .8em;
+}
+
+form a {
+	margin-left: 9.4em;
+}
+
+button {
+	align-self: center;
+	transition: all .2s;
+	margin-top: 1em;
+	border: 2px solid #2ecc71;
+	background: 0;
+	padding: .8em;
+	font-size: 1em;
+	font-weight: 100;
+	width: 7em;
+	color: #2ecc71;
+	border-radius: .3em;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #2ecc71;
+	color: white;
 }
