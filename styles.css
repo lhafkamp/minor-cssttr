@@ -268,7 +268,7 @@ figure footer {
 
 figure img {
 	margin: 1em 0 1em;
-	max-width: 100%;
+	max-width: max-content;
 	width: 25em;
 	transition: all ease-out .6s;
 }
