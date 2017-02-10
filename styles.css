@@ -4,11 +4,9 @@
 	font-family: 'Ubuntu', sans-serif;
 }
 
-body {
+main {
 	display: flex;
-	flex-direction: column;
 	flex-wrap: wrap;
-	align-items: center;
 }
 
 body > h1 {
@@ -82,115 +80,6 @@ body > h1 {
   	}
 }
 
-/* login */
-
-form {
-	background: #efefef;
-	padding: 2em;
-	display: flex;
-	justify-content: center;
-	flex-direction: column;
-	flex-wrap: wrap;
-	width: 20em;
-}
-
-form input {
-	font-size: 1em;
-	padding: .8em;
-	border: none;
-	margin: .3em 0 1em;
-}
-
-form input[type="checkbox"] {
-	padding: 2em;
-}
-
-form input:focus { 
-	outline: none;
-}
-
-form div label,
-form a {
-	font-size: .8em;
-}
-
-form a {
-	margin-left: 9.4em;
-}
-
-button {
-	align-self: center;
-	transition: all .2s;
-	margin-top: 1em;
-	border: 2px solid currentColor;
-	background: 0;
-	padding: .8em;
-	font-size: 1em;
-	font-weight: 100;
-	width: 7em;
-	color: #2ecc71;
-	border-radius: .3em;
-	cursor: pointer;
-}
-
-button:hover {
-	background: #2ecc71;
-	color: white;
-}
-
-/* picture */
-
-article,
-figure {
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-}
-
-article {
-	margin: 4em;
-	background: #efefef;
-	padding: 2em;
-}
-
-figure {
-	flex-wrap: wrap;
-	font-size: .8em;
-}
-
-figure p,
-figure footer {
-	margin: 0 5em 0 5em;
-	line-height: 1.4em;
-}
-
-figure footer {
-	margin-top: 1em;
-	font-style: italic;
-}
-
-figure img {
-	margin: 1em 0 1em;
-	max-width: 100%;
-	width: 25em;
-	transition: all ease-out .6s;
-}
-
- TODO I'll find a way to get out of the target state in the weekend 
-figure img:target {
-	position: fixed;
-	top: 50%;
-	left: calc(50% + 5%);
-	margin: -20%;
-	max-width: 30%;
-	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
-}
-
-figcaption {
-	width: 40em;
-}
-
 /* rating */
 
 .rating {
@@ -198,8 +87,10 @@ figcaption {
 	flex-wrap: wrap;
 	align-items: center;
 	flex-direction: column;
-	width: 36.5em;
+	width: 50vw;
 	margin-bottom: 10em;
+	margin-left: 2em;
+	margin-top: 2em;
 }
 
 .rating h1 {
@@ -212,7 +103,9 @@ figcaption {
 }
 
 .rating ol li {
-	margin-right: calc(100% / 4 - 1.75em);
+	margin-left: 1em;
+	width: 12vw;
+	font-size: .8em;
 	margin-top: 1em;
 	color: grey;
 	font-weight: 100;
@@ -237,11 +130,155 @@ progress::-webkit-progress-value {
 }
 
 @media (max-width: 45em) {
-	progress[value] {
-		width: 50%;
+	.rating {
+		width: 85vw;
 	}
 
 	.rating ol li {
-		margin-right: calc(50% / 4 - 1.75em);
+		width: 20vw;
+		margin-left: .9em;
 	}
+}
+
+/* login */
+
+form {
+	background: #efefef;
+	padding: 2em;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 20em;
+	height: 18em;
+	margin-left: 4%;
+	margin-right: 4%;
+	margin-bottom: 2em;
+}
+
+form input {
+	font-size: 1em;
+	padding: .8em;
+	border: none;
+	margin: .3em 0 1em;
+}
+
+form input[type="checkbox"] {
+	padding: 2em;
+}
+
+form input:focus { 
+	outline: none;
+}
+
+form div label,
+form a {
+	font-size: .8em;
+}
+
+form a {
+	float: right;
+}
+
+button {
+	align-self: center;
+	transition: all .2s;
+	margin-top: 1em;
+	border: 2px solid currentColor;
+	background: 0;
+	padding: .8em;
+	font-size: 1em;
+	font-weight: 100;
+	width: 7em;
+	color: #2ecc71;
+	border-radius: .3em;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #2ecc71;
+	color: white;
+	border-color: #2ecc71;
+}
+
+/* dialog styles taken from http://dabblet.com/gist/1326eb460b0dff91d638 */
+
+main.de-emphasized {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+.popup {
+	cursor: pointer;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 1;
+	width: 10em;
+	padding: 2em;
+	margin: -5em;
+	border: 1px solid silver;
+	border-radius: .5em;
+	display: none;
+	box-shadow: 0 .2em .5em rgba(0,0,0,.5),
+	            0 0 0 100vmax rgba(0,0,0,.2);
+}
+
+.popup p {
+	line-height: 1.4em;
+	font-size: .9em;
+	margin-bottom: 1em;
+}
+
+/* picture */
+
+article,
+figure {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+article {
+	margin-left: 4%;
+	margin-right: 4%;
+	background: #efefef;
+	padding: 2em;
+	width: 20em;
+}
+
+article h1:first-of-type {
+	align-self: flex-start;
+}
+
+figure {
+	flex-wrap: wrap;
+	font-size: .8em;
+}
+
+figure p,
+figure footer {
+	line-height: 1.4em;
+}
+
+figure footer {
+	margin-top: 1em;
+	font-style: italic;
+}
+
+figure img {
+	margin: 1em 0 1em;
+	max-width: 100%;
+	width: 25em;
+	transition: all ease-out .6s;
+}
+
+ /*TODO I'll find a way to get out of the target state in the weekend */
+figure img:target {
+	position: fixed;
+	top: 50%;
+	left: calc(50% + 5%);
+	margin: -20%;
+	max-width: 30%;
+	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
 }
