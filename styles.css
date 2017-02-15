@@ -1,7 +1,31 @@
+/* TODO disabled button hover style and removing disabled on succes */
+/* TODO find use for the loader */
+/* TODO fix nav on smallscreen */
+/* TODO target image full screen */
+/* TODO fix progressbar accuracy */
+/* TODO increase a click area */
+/* TODO add random bg */
+
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: 'Ubuntu', sans-serif;
+}
+
+p,
+h1,
+h2,
+label {
+	color: #333333;
+}
+
+a {
+	color: #2ecc71;
+}
+
+a:focus {
+	outline-color: #2ecc71;
 }
 
 main {
@@ -23,10 +47,11 @@ body > h1 {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
-	background: #2ecc71;
-	padding: .8em 0 .8em 0;
+	background: #333333;
+	padding: .7em 0 .7em 0;
 	width: 100vw;
 	margin-bottom: 4em;
+	font-weight: 100;
 }
 
 .menu h1 {
@@ -61,7 +86,8 @@ body > h1 {
 	flex-direction: row;
 	display: none;
 	font-weight: 100;
-	background: #2ecc71;
+	background: #333333;
+	font-size: .9em;
 }
 
 .menu li:hover ul {
@@ -77,6 +103,10 @@ body > h1 {
 
   	.menu h1 {
   		margin-left: 0;
+  	}
+
+  	.menu a {
+  		font-size: .9em;
   	}
 }
 
@@ -103,7 +133,7 @@ body > h1 {
 }
 
 .rating ol li {
-	margin-left: 1em;
+	padding-left:1em;
 	width: 12vw;
 	font-size: .8em;
 	margin-top: 1em;
@@ -143,7 +173,7 @@ progress::-webkit-progress-value {
 /* login */
 
 form {
-	background: #efefef;
+	background: #D3F5D3;
 	padding: 2em;
 	display: flex;
 	justify-content: center;
@@ -154,6 +184,12 @@ form {
 	margin-left: 4%;
 	margin-right: 4%;
 	margin-bottom: 2em;
+	transition: border 1s ease-;
+	border-radius: 10px;
+}
+
+form:invalid {
+	background: #efefef;
 }
 
 form input {
@@ -166,10 +202,6 @@ form input {
 form input[type="checkbox"] {
 	padding: 2em;
 }
-
-/*form input:focus { 
-	outline: none;
-}*/
 
 form div label,
 form a {
@@ -190,15 +222,54 @@ button {
 	font-size: 1em;
 	font-weight: 100;
 	width: 7em;
-	color: #2ecc71;
+	color: #333333;
 	border-radius: .3em;
 	cursor: pointer;
 }
 
+:disabled, [disabled], [aria-disabled="true"] {
+	cursor: not-allowed;
+}
+
 button:hover {
-	background: #2ecc71;
+	background: #333333;
 	color: white;
-	border-color: #2ecc71;
+	border-color: #333333;
+}
+
+/* checkbox idea taken from http://dabblet.com/gist/e269f10328615254e29e */
+
+input[type="checkbox"] {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label::before {
+	cursor: pointer;
+	content: '';
+	font-size: 2em;
+	display: inline-block;
+	vertical-align: -.35em;
+	width: 1em;
+	height: 1em;
+	margin-right: .4em;
+	border-radius: .2em;
+	background: grey;
+	text-indent: .25em;
+	line-height: .85em;
+	transition: background .5s;
+}
+
+input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	font-size: 2em;
+	vertical-align: -.1em;
+	text-indent: .12em;
+	background: #2ecc71;
+}
+
+input:focus {
+	outline-color: #2ecc71
 }
 
 /* dialog styles taken from http://dabblet.com/gist/1326eb460b0dff91d638 */
@@ -281,4 +352,18 @@ figure img:target {
 	margin: -20%;
 	max-width: 30%;
 	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
+}
+
+
+@keyframes loader {
+	to { 
+		background-position: -800px 0; 
+	}
+}
+
+.loader {
+	width: 100px; 
+	height: 100px;
+	background: url(http://dabblet.com/img/loader.png) 0 0;
+	animation: loader 1s infinite steps(8);
 }

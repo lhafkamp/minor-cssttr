@@ -30,12 +30,12 @@
                 	<a href="#main-content" aria-label="Home, current page">Home</a>
                 </li>
                 <li>
-                    <a href="/products">Products</a>
+                    <a href="/products">Products <span>&#10124;</span></a>
 
                     <ul>
-                        <li><a href="/products/rock">Rock</a></li>
-                        <li><a href="/products/paper">Paper</a></li>
-                        <li><a href="/products/scissors">Scissors</a></li>
+                        <li><a href="/products/rock"><span>&#10122;</span>- Rock</a></li>
+                        <li><a href="/products/paper"><span>&#10123;</span>- Paper</a></li>
+                        <li><a href="/products/scissors"><span>&#10124;</span>- Scissors</a></li>
                     </ul>
 
                 </li>
@@ -49,7 +49,7 @@
 
             <h1>Finish your order</h1>
 
-            <progress value="0.25" max="1">25%</progress>
+            <progress value="0.50" max="1">25%</progress>
 
             <ol>
                 <li>
@@ -67,7 +67,7 @@
             </ol>
 
         </nav>
-
+        
         <form action="/" method="post">
 
             <label for="field-email">Email</label>
@@ -82,8 +82,7 @@
                 <a href="/">Forgot password</a>
             </div>
 
-            <button type="submit">Login</button>
-
+            <button disabled type="submit">Login</button>
         </form>
         
     <!--  -->
@@ -108,6 +107,7 @@
             </figure>
         </article>
     </main>
+<div class="loader"></div>
 
 <script src="script.js"></script>
 </body>
