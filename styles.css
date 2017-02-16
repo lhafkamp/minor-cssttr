@@ -1,8 +1,8 @@
 /* TODO find use for the loader */
 /* TODO target image full screen */
-/* TODO increase a click area */
 /* TODO add random bg? */
 /* TODO add AMP styling */
+/* TODO add chat component */
 
 a,
 ul,
@@ -11,7 +11,8 @@ ol,
 p,
 h1,
 h2,
-label {
+label,
+legend {
 	color: #333333;
 	margin: 0;
 	padding: 0;
@@ -52,7 +53,7 @@ body > h1 {
 	justify-content: flex-end;
 	align-items: center;
 	background: #333333;
-	padding: .7em 0 .7em 0;
+	padding: 1em 0 1em 0;
 	width: 100vw;
 	margin-bottom: 4em;
 	font-weight: 100;
@@ -230,6 +231,11 @@ form a {
 
 form a {
 	float: right;
+	background-clip: padding-box;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 15px solid transparent;
+	box-shadow: 0 0 0 0px rgba(0, 0, 0, .3)inset;
 }
 
 button {
@@ -394,7 +400,6 @@ figure img:target {
 	position: relative;
 	transition: opacity 1s;
 	border-bottom: 8px solid #efefef;
-	transition: border .4s ease;
 }
 
 .mediaitem article a:after {
@@ -404,10 +409,6 @@ figure img:target {
 	top: 0;
 	bottom: 0;
 	content: '';
-}
-
-.mediaitem article a {
-	transition: color .2s ease;
 }
 
 .mediaitem article a:hover {
@@ -447,6 +448,66 @@ figure img:target {
 	}
 }
 
+/* rating emojis */
+
+.emoji {
+	margin: 2em;
+	display: flex;
+}
+
+fieldset input {
+	display: none;
+}
+
+fieldset {
+	border: 0;
+	height: 10em;
+}
+
+fieldset legend {
+	font-size: 1.4em;
+	font-weight: 800;
+	margin-bottom: .4em;
+}
+
+fieldset label {
+	transition: font-size .1s ease-in;
+	display: block;
+	float: left;
+	width: 3.9em;
+	margin-top: 1em;
+	margin-right: 2em;
+	text-align: center;
+	font-size: .9em;
+	font-weight: 800;
+}
+
+fieldset label:hover {
+	color: #2ecc71;
+}
+
+input[type="radio"]:checked+label{
+	color: #2ecc71;
+	font-size: 1.2em;
+} 
+
+svg {
+	margin-top: 1em;
+	cursor: pointer;
+	width: 4em;
+}
+
+@media (max-width: 30em) {
+  	fieldset label {
+  		margin-right: 1em;
+  	}
+
+  	input[type="radio"]:checked+label{
+		color: #2ecc71;
+		font-size: 1.1em;
+	} 
+}
+
 /* loading screen */
 
 #loaderbox {
@@ -474,5 +535,10 @@ figure img:target {
 	top: 40%;
 	left: 45%;
 	right: 45%;
-	z-index: 200;
+}
+
+@media (max-width: 40em) {
+  	.loader {
+		left: 40%;
+	}
 }
