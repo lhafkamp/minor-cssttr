@@ -49,24 +49,25 @@
 
             <h1>Finish your order</h1>
 
-            <progress value="0.50" max="1">25%</progress>
+            <progress value="0.25" max="1">25%</progress>
 
             <ol>
                 <li>
-                    <a href="/cart">Cart</a>
+                    <a checked href="/cart">Cart <span>&#10003</span></a>
                 </li>
                 <li>
-                    <a href="#main-content" aria-label="Address, current step">Address</a>
+                    <a active href="#main-content" aria-label="Address, current step">Address</a>
                 </li>
-                <li>
+                <li step>
                     Payment
                 </li>
-                <li>
+                <li step>
                     Confirm
                 </li>
             </ol>
 
         </nav>
+
         
         <form action="/" method="post">
 

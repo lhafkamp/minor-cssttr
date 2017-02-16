@@ -1,7 +1,6 @@
 const button = document.querySelector('button');
 const dialog = document.querySelector('.popup');
 const main = document.querySelector('main');
-const progress = document.querySelector('progress');
 const proNav = Array.from(document.querySelectorAll('nav ol li a'));
 
 function openDialog() {
@@ -14,17 +13,25 @@ function removeDialog() {
 	main.classList.remove('de-emphasized');
 }
 
-// TODO add a's
-function addProgress() {
-	if (progress.value < 0.26) {
-		proNav[0].style.color = '#2ecc71';
-	} else {
-		proNav[1].style.color = '#2ecc71';
-	}
-}
-
-addProgress();
-
 button.addEventListener('click', openDialog);
 dialog.addEventListener('click', removeDialog);
-progress.addEventListener('click', addProgress);
+
+// nav focus
+// TODO fix tabprob
+const product = document.querySelector('.menu li:nth-child(2)');
+const about = document.querySelectorAll('.menu li:nth-child(3)');
+const subnav = document.querySelector('.menu li ul');
+
+function getSubNav() {
+	subnav.style.padding = '2em 1em 1em 0';
+	subnav.style.position = 'absolute';
+	subnav.style.display = 'block';
+}
+
+function removeSubNav() {
+	subnav.style.display = 'none';
+}
+
+product.addEventListener('keyup', getSubNav);
+about.forEach(a => a.addEventListener('change', removeSubNav));
+

@@ -1,23 +1,28 @@
 /* TODO disabled button hover style and removing disabled on succes */
 /* TODO find use for the loader */
-/* TODO fix nav on smallscreen */
 /* TODO target image full screen */
-/* TODO fix progressbar accuracy */
 /* TODO increase a click area */
-/* TODO add random bg */
+/* TODO add random bg? */
+/* TODO add AMP styling */
 
-
-* {
-	margin: 0;
-	padding: 0;
-	font-family: 'Ubuntu', sans-serif;
-}
-
+a,
+ul,
+li,
+ol,
 p,
 h1,
 h2,
 label {
 	color: #333333;
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+body,
+nav {
+	margin: 0;
+	padding: 0;
 }
 
 a {
@@ -63,7 +68,6 @@ body > h1 {
 
 .menu ul {
 	display: flex;
-	margin-right: 2em;
 }
 
 .menu li {
@@ -105,8 +109,20 @@ body > h1 {
   		margin-left: 0;
   	}
 
+  	.menu li {
+		margin-top: .5em;
+  	}
+
   	.menu a {
-  		font-size: .9em;
+  		font-size: 1em;
+  	}
+}
+
+@media (max-width: 25em) {
+  	.menu li {
+		margin-top: .5em;
+		padding: .1em;
+		font-size: .9em;
   	}
 }
 
@@ -115,12 +131,9 @@ body > h1 {
 .rating {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
 	flex-direction: column;
-	width: 50vw;
-	margin-bottom: 10em;
-	margin-left: 2em;
-	margin-top: 2em;
+	width: 40em;
+	margin: 2em .5em 10em .5em;
 }
 
 .rating h1 {
@@ -128,21 +141,41 @@ body > h1 {
 }
 
 .rating ol {
-	align-self: flex-start;
 	display: flex;
+	justify-content: space-around;
 }
 
 .rating ol li {
-	padding-left:1em;
-	width: 12vw;
-	font-size: .8em;
+	font-size: .9em;
 	margin-top: 1em;
 	color: grey;
 	font-weight: 100;
+	list-style: none;
 }
 
 .rating ol li a {
 	color: grey;
+}
+
+.rating ol [checked] {
+	text-decoration: none;
+	color: #2ecc71;
+}
+
+.rating ol span {
+	display: none;
+}
+
+.rating ol [checked] span {
+	display: inline-block;
+}
+
+.rating ol [active] {
+	color: #2ecc71;
+}
+
+.rating ol [step] {
+	opacity: .3;
 }
 
 progress[value] {
@@ -157,17 +190,6 @@ progress::-webkit-progress-bar {
 }
 progress::-webkit-progress-value {
 	background: #2ecc71;
-}
-
-@media (max-width: 45em) {
-	.rating {
-		width: 85vw;
-	}
-
-	.rating ol li {
-		width: 20vw;
-		margin-left: .9em;
-	}
 }
 
 /* login */
