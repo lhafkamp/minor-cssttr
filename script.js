@@ -2,6 +2,12 @@ const button = document.querySelector('button');
 const dialog = document.querySelector('.popup');
 const main = document.querySelector('main');
 const proNav = Array.from(document.querySelectorAll('nav ol li a'));
+const form = Array.from(document.querySelectorAll('form input'));
+const loaderbox = document.querySelector('#loaderbox');
+
+setTimeout(function() {
+	loaderbox.style.opacity = 0;
+}, 1000);
 
 function openDialog() {
 	dialog.style.display = 'block';
@@ -13,8 +19,16 @@ function removeDialog() {
 	main.classList.remove('de-emphasized');
 }
 
+function enableButton() {
+	if (form[0].value !== '' && form[1].value !== '') {
+		button.removeAttribute('disabled');
+	}
+}
+
 button.addEventListener('click', openDialog);
 dialog.addEventListener('click', removeDialog);
+form[1].addEventListener('input', enableButton);
+
 
 // nav focus
 // TODO fix tabprob
@@ -33,5 +47,5 @@ function removeSubNav() {
 }
 
 product.addEventListener('keyup', getSubNav);
-about.forEach(a => a.addEventListener('change', removeSubNav));
+about.forEach(a => a.addEventListener('keyup', removeSubNav));
 
