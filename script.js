@@ -1,4 +1,4 @@
-const button = document.querySelector('button');
+const button = document.querySelector('.login button');
 const dialog = document.querySelector('.popup');
 const main = document.querySelector('main');
 const proNav = Array.from(document.querySelectorAll('nav ol li a'));
