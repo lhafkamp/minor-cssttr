@@ -1,5 +1,4 @@
 /* TODO target image full screen/landscape (difficult T-T) */
-/* TODO add random bg? */
 
 a,
 ul,
@@ -30,10 +29,32 @@ a:focus {
 	outline-color: #2ecc71;
 }
 
+/* random background idea taken from http://dabblet.com/gist/4b4ad05f4c1b5259066f */
+
+body {
+	background: #333;
+	background-image:
+	    linear-gradient(90deg, #333 11px, transparent 0),
+	    linear-gradient(90deg, #655 41px, transparent 0);
+	background-size: 2.6em 100%, 3.8em 100%, 52em 100%;
+	display: flex;
+	justify-content: center;
+}
+
 main {
+	background: white;
+	max-width: 90%;
 	display: flex;
 	flex-wrap: wrap;
 }
+
+@media (max-width: 75em) {
+  	main {
+  		max-width: 100%;
+  	}
+}
+
+
 
 /* nav */
 
@@ -509,7 +530,8 @@ svg {
 .chat {
 	background: #efefef;
 	width: 20em;
-	margin: 2em;
+	height: 26em;
+	margin: 2em 2em 6em 2em;
 }
 
 .chat ol {
@@ -529,7 +551,7 @@ svg {
 }
 
 .you {
-	background: #2ecc71;
+	background: #D3F5D3;
 	width: max-content;
 	align-self: flex-end;
 }
@@ -557,7 +579,7 @@ svg {
 }
 
 p[data-status="READ"] span {
-	color: white;
+	color: #2ecc71;
 }
 
 .chat form {
@@ -601,6 +623,7 @@ p[data-status="READ"] span {
 	width: 100vw;
 	height: 100vh;
 	padding: 1em;
+	z-index: 2000;
 }
 
 @keyframes loader {

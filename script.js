@@ -1,4 +1,4 @@
-const button = document.querySelector('.login button');
+const button = document.querySelector('button');
 const dialog = document.querySelector('.popup');
 const main = document.querySelector('main');
 const proNav = Array.from(document.querySelectorAll('nav ol li a'));
@@ -26,13 +26,13 @@ function removeDialog() {
 function enableButton() {
 	if (form[0].value !== '' && form[1].value !== '') {
 		button.removeAttribute('disabled');
+		button.setAttribute('enabled');
 	}
 }
 
 button.addEventListener('click', openDialog);
 dialog.addEventListener('click', removeDialog);
 form[1].addEventListener('input', enableButton);
-
 
 // nav focus
 // TODO fix tabprob
