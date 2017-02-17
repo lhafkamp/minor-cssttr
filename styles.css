@@ -1,6 +1,5 @@
 /* TODO target image full screen/landscape (difficult T-T) */
 /* TODO add random bg? */
-/* TODO add AMP styling */
 
 a,
 ul,
@@ -342,6 +341,13 @@ figure {
 
 .picture h1:first-of-type {
 	align-self: flex-start;
+	font-family: 'Ampersand';
+}
+
+@font-face {
+	font-family: 'Ampersand';
+	src: local('Times New Roman');
+  	unicode-range: U+26;
 }
 
 figure {
