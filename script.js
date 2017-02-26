@@ -36,21 +36,19 @@ form[1].addEventListener('input', enableButton);
 
 
 // nav focus
-// TODO fix tabprob
-const product = document.querySelector('.menu li:nth-child(2)');
-const about = document.querySelectorAll('.menu li:nth-child(3)');
+
+const product = document.querySelector('.product');
 const subnav = document.querySelector('.menu li ul');
 
-function getSubNav() {
-	subnav.style.padding = '2em 1em 1em 0';
-	subnav.style.position = 'absolute';
-	subnav.style.display = 'block';
+
+function showNav(e) {
+	if (e.code === 'Tab' && e.target.classList.contains('product') || e.target.classList.contains('hi')) {
+		subnav.style.padding = '2em 1em 1em 0';
+		subnav.style.position = 'absolute';
+		subnav.style.display = 'block';
+	} else {
+		subnav.style.display = 'none';
+	}
 }
 
-function removeSubNav() {
-	subnav.style.display = 'none';
-}
-
-product.addEventListener('keyup', getSubNav);
-about.forEach(a => a.addEventListener('keyup', removeSubNav));
-
+document.addEventListener('keyup', showNav);

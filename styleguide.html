@@ -13,9 +13,9 @@
 </head>
 <body>
 
-<div id="loaderbox">
+<!-- <div id="loaderbox">
     <div class="loader"></div>
-</div>
+</div> -->
 
 <div class="popup">
     <p>the login doesn't work yet :(</p>
@@ -32,12 +32,12 @@
                 <a href="#main-content" aria-label="Home, current page">Home</a>
             </li>
             <li>
-                <a href="/products">Products <span>&#10124;</span></a>
+                <a class="product" href="/products">Products <span>&#10124;</span></a>
 
                 <ul>
-                    <li><a href="/products/rock"><span>&#10122;</span>- Rock</a></li>
-                    <li><a href="/products/paper"><span>&#10123;</span>- Paper</a></li>
-                    <li><a href="/products/scissors"><span>&#10124;</span>- Scissors</a></li>
+                    <li><a class="hi" href="/products/rock"><span>&#10122;</span>- Rock</a></li>
+                    <li><a class="hi" href="/products/paper"><span>&#10123;</span>- Paper</a></li>
+                    <li><a class="hi" href="/products/scissors"><span>&#10124;</span>- Scissors</a></li>
                 </ul>
 
             </li>
@@ -46,7 +46,6 @@
         </ul>
 
     </nav>
-
          <nav class="rating">
 
             <h1>Finish your order</h1>
@@ -112,17 +111,16 @@
         
 
         <section class="mediaitem">
-            <article>
+            <article id="spotlight">
                 <h1>
                     <a href="/">HTML5 accessibility, are block links hurting accessibility?</a>
                 </h1>
-                
-                <div>
-                    <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car." />
+                <img src="https://vasilis.nl/voto/fotos/klein/161001180558-de-boot-gemist-150.jpg" alt="A colorful crayon drawing on the hood of a car." />
 
-                    <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML. A recent article by @feather concludes that the inclusion of block level elements inside a link causes some Assistive Technology (AT) to misbehave.</p>
-                </div>
+                <p>It is conforming in HTML5 for links to include block level elements such as headings and paragraphs, this was forbidden in previous versions of HTML.
+                </p>
             </article>
+
 
             <article>
                 <h1>
@@ -195,7 +193,7 @@
 
         <div class="emoji">
             <fieldset>
-            <legend>Rating</legend>
+            <!-- <legend>Rating</legend> -->
 
             
             <input type="radio" name="rating" id="rating-0">
