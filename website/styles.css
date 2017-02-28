@@ -31,7 +31,7 @@ body {
 }
 
 main {
-	background: white;
+	background: #efefef;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -49,8 +49,6 @@ main {
   	}
 }
 
-
-
 /* nav */
 
 .menu {
@@ -61,7 +59,7 @@ main {
 	padding: 1em 0 1em 0;
 	width: 100vw;
 	font-weight: 100;
-	margin-bottom: 2em;
+	margin-bottom: .1em;
 }
 
 .menu h1 {
@@ -138,7 +136,7 @@ main {
 	flex-wrap: wrap;
 	flex-direction: column;
 	width: 40em;
-	margin: 2em .5em 6em .5em;
+	margin: 2em .5em 6em 5em;
 }
 
 .order h1 {
@@ -191,7 +189,7 @@ progress[value] {
 }
 
 progress::-webkit-progress-bar {
-	background: #efefef;
+	background: white;
 }
 
 progress::-webkit-progress-value {
@@ -335,24 +333,6 @@ main.de-emphasized {
 	margin-bottom: 1em;
 }
 
-/* big picture */
-
-#pics div {
-	display: flex;
-	width: 35em;
-}
-
-.bigpicture {
-	margin-top: 1em;
-	padding: 2em;
-	width: max-content;
-	background: #efefef;
-}
-
-.bigpicture img {
-	height: 20em;
-}
-
 /* picture */
 
 .picture,
@@ -364,22 +344,12 @@ figure {
 }
 
 .picture {
-	margin: .5em .5em 0 0em;
-	background: #efefef;
+	margin: 1em .5em 1em 1em;
+	border: 1px solid #333;
+	border-radius: .5em;
 	padding: 2em;
 	width: 15.2em;
 	height: max-content;
-}
-
-.picture h1:first-of-type {
-	align-self: flex-start;
-	font-family: 'Ampersand';
-}
-
-@font-face {
-	font-family: 'Ampersand';
-	src: local('Times New Roman');
-  	unicode-range: U+26;
 }
 
 figure {
@@ -514,7 +484,7 @@ fieldset input:focus + label {
 
 fieldset {
 	border: 0;
-	height: 10em;
+	height: 4em;
 }
 
 fieldset legend {
@@ -527,11 +497,11 @@ fieldset label {
 	transition: font-size .1s ease-in;
 	display: block;
 	float: left;
-	width: 3.9em;
+	width: 3.2em;
 	margin-top: 1em;
 	margin-right: 1em;
 	text-align: center;
-	font-size: .9em;
+	font-size: .8em;
 	font-weight: 800;
 }
 
@@ -575,21 +545,10 @@ svg {
 	width: 2.5em;
 }
 
-@media (max-width: 30em) {
-  	fieldset label {
-  		margin-right: 1em;
-  	}
-
-  	input[type="radio"]:checked+label{
-		color: #2ecc71;
-		font-size: 1.1em;
-	} 
-}
-
 /* chat */
 
 .chat {
-	background: #efefef;
+	background: white;
 	width: 20em;
 	height: 26em;
 	margin: 3em 2em 4em 2em;
