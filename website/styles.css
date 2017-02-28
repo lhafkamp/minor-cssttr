@@ -1,0 +1,709 @@
+a,
+ul,
+li,
+ol,
+p,
+h1,
+h2,
+label,
+legend {
+	color: #333333;
+	margin: 0;
+	padding: 0;
+	font-family: 'Ubuntu', sans-serif;
+}
+
+body,
+nav {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #2ecc71;
+}
+
+/* random background idea taken from http://dabblet.com/gist/4b4ad05f4c1b5259066f */
+
+body {
+	display: flex;
+	justify-content: center;
+}
+
+main {
+	background: white;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+@media (max-width: 75em) {
+  	main {
+  		max-width: 100%;
+  	}
+}
+
+@media (max-width: 50em) {
+  	main {
+  		flex-direction: row;
+  	}
+}
+
+
+
+/* nav */
+
+.menu {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	background: #333333;
+	padding: 1em 0 1em 0;
+	width: 100vw;
+	font-weight: 100;
+	margin-bottom: 2em;
+}
+
+.menu h1 {
+	flex: 1;
+	margin-left: 2em;
+	color: white;
+	cursor: pointer;
+}
+
+.menu ul {
+	display: flex;
+}
+
+.menu li {
+	padding: .8em;
+	list-style: none;
+}
+
+.menu a {
+	padding: 1em .5em 1em .5em;
+	text-decoration: none;
+	color: white;
+	cursor: pointer;
+}
+
+.menu a:hover {
+	text-decoration: underline;
+}
+
+.menu li ul {
+	flex-direction: row;
+	display: none;
+	font-weight: 100;
+	background: #333333;
+	font-size: .9em;
+}
+
+.menu li:hover ul {
+	display: block !important;
+	padding: 2em 1em 1em 0;
+	position: absolute;
+}
+
+@media (max-width: 45em) {
+  	.menu {
+  		flex-direction: column;
+  	}
+
+  	.menu h1 {
+  		margin-left: 0;
+  	}
+
+  	.menu li {
+		margin-top: .5em;
+  	}
+
+  	.menu a {
+  		font-size: 1em;
+  	}
+}
+
+@media (max-width: 25em) {
+  	.menu li {
+		margin-top: .5em;
+		padding: .1em;
+		font-size: .9em;
+  	}
+}
+
+/* progress */
+
+.order {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 40em;
+	margin: 2em .5em 6em .5em;
+}
+
+.order h1 {
+	margin-bottom: 1em;
+}
+
+.order ol {
+	display: flex;
+	justify-content: space-around;
+}
+
+.order ol li {
+	font-size: .9em;
+	margin-top: 1em;
+	color: grey;
+	font-weight: 100;
+	list-style: none;
+}
+
+.order ol li a {
+	color: grey;
+}
+
+.order ol [checked] {
+	text-decoration: none;
+	color: #2ecc71;
+}
+
+.order ol span {
+	display: none;
+}
+
+.order ol [checked] span {
+	display: inline-block;
+}
+
+.order ol [active] {
+	color: #2ecc71;
+}
+
+.order ol [step] {
+	opacity: .3;
+}
+
+progress[value] {
+	width: 100%;
+	height: 1em;
+	border: none;
+	background: #efefef;
+}
+
+progress::-webkit-progress-bar {
+	background: #efefef;
+}
+
+progress::-webkit-progress-value {
+	background: #2ecc71;
+}
+
+progress::-moz-progress-bar {
+	background: #2ecc71;
+}
+
+/* login */
+
+.login form {
+	background: #D3F5D3;
+	padding: 2em;
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	flex-wrap: wrap;
+	width: 20em;
+	height: 18em;
+	margin-bottom: 2em;
+	transition: border 1s ease-;
+}
+
+.login form:invalid {
+	background: #efefef;
+}
+
+.login form input {
+	font-size: 1em;
+	padding: .8em;
+	border: none;
+	margin: .3em 0 1em;
+}
+
+.login form input[type="checkbox"] {
+	padding: 2em;
+}
+
+.login form div label,
+.login form a {
+	font-size: .8em;
+}
+
+.login form a {
+	float: right;
+	background-clip: padding-box;
+	border-right: 10px solid transparent;
+	border-left: 10px solid transparent;
+	border-bottom: 15px solid transparent;
+	box-shadow: 0 0 0 0px rgba(0, 0, 0, .3)inset;
+}
+
+button {
+	align-self: center;
+	transition: all .2s;
+	margin-top: 1em;
+	border: 2px solid currentColor;
+	background: 0;
+	padding: .8em;
+	font-size: 1em;
+	font-weight: 100;
+	width: 7em;
+	color: #333333;
+	border-radius: .3em;
+	cursor: pointer;
+}
+
+:disabled, [disabled], [aria-disabled="true"] {
+	cursor: not-allowed;
+}
+
+.login form button[disabled]:hover {
+	background: none;
+	color: #333333;
+}
+
+button:hover {
+	background: #333333;
+	color: white;
+	border-color: #333333;
+}
+
+/* checkbox idea taken from http://dabblet.com/gist/e269f10328615254e29e */
+
+input[type="checkbox"] {
+	position: absolute;
+	clip: rect(0,0,0,0);
+}
+
+input[type="checkbox"] + label::before {
+	cursor: pointer;
+	content: '';
+	font-size: 2em;
+	display: inline-block;
+	vertical-align: -.35em;
+	width: 1em;
+	height: 1em;
+	margin-right: .4em;
+	border-radius: .2em;
+	background: grey;
+	text-indent: .25em;
+	line-height: .85em;
+	transition: background .5s;
+}
+
+input[type="checkbox"]:checked + label::before {
+	content: '\2713';
+	font-size: 2em;
+	vertical-align: -.1em;
+	text-indent: .12em;
+	background: #2ecc71;
+}
+
+/* dialog styles taken from http://dabblet.com/gist/1326eb460b0dff91d638 */
+
+main.de-emphasized {
+	-webkit-filter: blur(3px);
+	filter: blur(3px);
+}
+
+.popup {
+	cursor: pointer;
+	position: fixed;
+	top: 50%; left: 50%;
+	z-index: 1;
+	width: 10em;
+	padding: 2em;
+	margin: -5em;
+	border: 1px solid silver;
+	border-radius: .5em;
+	display: none;
+	box-shadow: 0 .2em .5em rgba(0,0,0,.5),
+	            0 0 0 100vmax rgba(0,0,0,.2);
+}
+
+.popup p {
+	line-height: 1.4em;
+	font-size: .9em;
+	margin-bottom: 1em;
+}
+
+/* big picture */
+
+#pics div {
+	display: flex;
+	width: 35em;
+}
+
+.bigpicture {
+	margin-top: 1em;
+	padding: 2em;
+	width: max-content;
+	background: #efefef;
+}
+
+.bigpicture img {
+	height: 20em;
+}
+
+/* picture */
+
+.picture,
+figure {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.picture {
+	margin: .5em .5em 0 0em;
+	background: #efefef;
+	padding: 2em;
+	width: 15.2em;
+	height: max-content;
+}
+
+.picture h1:first-of-type {
+	align-self: flex-start;
+	font-family: 'Ampersand';
+}
+
+@font-face {
+	font-family: 'Ampersand';
+	src: local('Times New Roman');
+  	unicode-range: U+26;
+}
+
+figure {
+	flex-wrap: wrap;
+	font-size: .8em;
+}
+
+figure p,
+figure footer {
+	line-height: 1.4em;
+}
+
+figure footer {
+	margin-top: 1em;
+	font-style: italic;
+}
+
+figure img {
+	margin: 1em 0 1em;
+	max-width: max-content;
+	width: 20em;
+	transition: all ease-out .6s;
+}
+
+figure img:target {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	margin: 0;
+	transform: translate(-50%, -50%);
+	max-width: 100%;
+	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
+	z-index: 200;
+}
+
+/* media item */
+
+#spotlight {
+	display: flex;
+	flex-direction: column;
+	height: min-content;
+}
+
+#spotlight img {
+	margin: 1em 0 1em 0;
+	width: 100%;
+	height: 12em;
+}
+
+#spotlight p {
+	margin-left: 0;
+	font-size: .9em;
+}
+
+.mediaitem {
+	margin-top: 1em;
+}
+
+.mediaitem article {
+	margin: 0em 2em .4em 1em;
+	height: min-content;
+	padding: 2em;
+	background: #efefef;
+	position: relative;
+	transition: opacity 1s;
+	border-bottom: 8px solid #efefef;
+}
+
+.mediaitem article a:after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	content: '';
+}
+
+.mediaitem article a:hover {
+	color: #333333;
+}
+
+.mediaitem article:hover {
+	border-bottom: 8px solid #333333;
+}
+
+.mediaitem article div {
+	margin-top: 1em;
+	display: flex;
+}
+
+.mediaitem article p {
+	margin-left: 1em;
+	font-size: .8em;
+	line-height: 1.4em
+}
+
+.mediaitem article img {
+	height: 4em;
+}
+
+@media (max-width: 25em) {
+  	.mediaitem article div {
+		margin-top: 1em;
+		display: block;
+	}
+}
+
+@media (min-width: 35em) {
+  	.mediaitem article div {
+		width: 30em;
+	}
+
+	#spotlight {
+		width: 32em;
+	}
+}
+
+/* rating emojis */
+
+.emoji {
+	display: flex;
+}
+
+fieldset input {
+	opacity: 0;
+    position: absolute;
+}
+
+fieldset input:focus + label {
+	color: #2ecc71;
+}
+
+fieldset {
+	border: 0;
+	height: 10em;
+}
+
+fieldset legend {
+	font-size: 1.4em;
+	font-weight: 800;
+	margin-bottom: .4em;
+}
+
+fieldset label {
+	transition: font-size .1s ease-in;
+	display: block;
+	float: left;
+	width: 3.9em;
+	margin-top: 1em;
+	margin-right: 1em;
+	text-align: center;
+	font-size: .9em;
+	font-weight: 800;
+}
+
+@-webkit-keyframes rotating {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+fieldset svg:hover {
+	-webkit-animation: rotating 1s linear infinite;
+}
+
+fieldset label:hover {
+	color: #616161;
+}
+
+input[type="radio"]:checked + label {
+	color: #2ecc71;
+} 
+
+@-webkit-keyframes clicked {
+	from {
+		width: 3.5em;
+	}
+	to {
+		width: 2.5em;
+	}
+}
+
+input[type="radio"]:checked + label svg {
+	-webkit-animation: clicked .6s;
+} 
+
+svg {
+	margin-top: 1em;
+	cursor: pointer;
+	width: 2.5em;
+}
+
+@media (max-width: 30em) {
+  	fieldset label {
+  		margin-right: 1em;
+  	}
+
+  	input[type="radio"]:checked+label{
+		color: #2ecc71;
+		font-size: 1.1em;
+	} 
+}
+
+/* chat */
+
+.chat {
+	background: #efefef;
+	width: 20em;
+	height: 26em;
+	margin: 3em 2em 4em 2em;
+}
+
+.chat ol {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	list-style: none;
+	font-size: .9em;
+	height: 25em;
+	padding: 1em
+}
+
+.chat ol li {
+	margin: .3em;
+	padding: .8em;
+	border-radius: .7em;
+}
+
+.you {
+	background: #D3F5D3;
+	width: max-content;
+	align-self: flex-end;
+}
+
+.john {
+	background: #CCC;
+	width: max-content;
+}
+
+.chat footer {
+	padding-top: .8em;
+	opacity: .7;
+	text-align: right;
+	font-size: .7em;
+	font-style: italic;
+}
+
+.chat footer p:first-of-type {
+	padding-bottom: .2em
+}
+
+.chat footer span:last-of-type {
+	margin-left: -.3em;
+	margin-right: .2em;
+}
+
+p[data-status="READ"] span {
+	color: #2ecc71;
+}
+
+.chat form {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #ccc;
+	padding: 1em 1em 1em 1em;
+}
+
+.chat form button {
+	width: 5em;
+	height: 2.3em;
+	margin-top: 0em;
+	padding-top: .45em;
+	padding-bottom: 1em;
+	border-top-left-radius: 0em;
+	border-bottom-left-radius: 0em;
+}
+
+.chat form textarea {
+	resize: none;
+	border-top-left-radius: .4em;
+	border-bottom-left-radius: .4em;
+	border: white;
+	height: 2.1em;
+	width: 65%;
+	font-size: .9em;
+}
+
+
+/* loading screen */
+
+#loaderbox {
+	transition: opacity .8s;
+	position: fixed;
+	top: 0;
+	background: black;
+	width: 100vw;
+	height: 100vh;
+	padding: 1em;
+	z-index: 2000;
+}
+
+@keyframes loader {
+	to { 
+		background-position: -800px 0; 
+	}
+}
+
+.loader {
+	width: 100px; 
+	height: 100px;
+	background: url(http://dabblet.com/img/loader.png) 0 0;
+	animation: loader 1s infinite steps(8);
+	position: fixed;
+	top: 40%;
+	left: 45%;
+	right: 45%;
+}
+
+@media (max-width: 40em) {
+  	.loader {
+		left: 40%;
+	}
+}
