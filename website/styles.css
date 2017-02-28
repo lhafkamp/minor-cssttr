@@ -28,10 +28,17 @@ a {
 body {
 	display: flex;
 	justify-content: center;
+	background: #efefef;
 }
 
 main {
 	background: #efefef;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.intro {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -59,7 +66,7 @@ main {
 	padding: 1em 0 1em 0;
 	width: 100vw;
 	font-weight: 100;
-	margin-bottom: .1em;
+	margin-bottom: 2em;
 }
 
 .menu h1 {
@@ -71,6 +78,7 @@ main {
 
 .menu ul {
 	display: flex;
+	margin-right: 2em;
 }
 
 .menu li {
@@ -203,6 +211,7 @@ progress::-moz-progress-bar {
 /* login */
 
 .login form {
+	margin-top: 4em;
 	background: #D3F5D3;
 	padding: 2em;
 	display: flex;
@@ -213,6 +222,7 @@ progress::-moz-progress-bar {
 	height: 18em;
 	margin-bottom: 2em;
 	transition: border 1s ease-;
+	border: 1px solid #333;
 }
 
 .login form:invalid {
@@ -665,4 +675,8 @@ p[data-status="READ"] span {
   	.loader {
 		left: 40%;
 	}
+}
+
+.hide {
+	display: none;
 }
