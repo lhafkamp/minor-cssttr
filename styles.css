@@ -25,10 +25,6 @@ a {
 	color: #2ecc71;
 }
 
-a:focus {
-	outline-color: #2ecc71;
-}
-
 /* random background idea taken from http://dabblet.com/gist/4b4ad05f4c1b5259066f */
 
 body {
@@ -309,10 +305,6 @@ input[type="checkbox"]:checked + label::before {
 	background: #2ecc71;
 }
 
-input:focus {
-	outline-color: #2ecc71
-}
-
 /* dialog styles taken from http://dabblet.com/gist/1326eb460b0dff91d638 */
 
 main.de-emphasized {
@@ -397,8 +389,9 @@ figure img {
 figure img:target {
 	position: fixed;
 	top: 50%;
-	left: calc(50% + 5%);
-	margin: -20%;
+	left: 50%;
+	margin: 0;
+	transform: translate(-50%, -50%);
 	max-width: 100%;
 	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
 	z-index: 200;
@@ -612,7 +605,6 @@ p[data-status="READ"] span {
 }
 
 .chat form button {
-	outline-color: #2ecc71;
 	width: 5em;
 	height: 2.3em;
 	margin-top: 0em;
@@ -623,7 +615,6 @@ p[data-status="READ"] span {
 }
 
 .chat form textarea {
-	outline-color: #2ecc71;
 	resize: none;
 	border-top-left-radius: .4em;
 	border-bottom-left-radius: .4em;
