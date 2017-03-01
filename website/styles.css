@@ -116,6 +116,10 @@ main {
   		flex-direction: column;
   	}
 
+  	.menu ul {
+  		margin-right: 0;
+  	}
+
   	.menu h1 {
   		margin-left: 0;
   	}
@@ -355,7 +359,9 @@ figure {
 
 .picture {
 	margin: 1em .5em 1em 1em;
-	border: 1px solid #333;
+	/*border: 1px solid #333;*/
+	box-shadow: 3px 3px 10px #B0B0B0;
+	background: white;
 	border-radius: .5em;
 	padding: 2em;
 	width: 15.2em;
@@ -558,10 +564,12 @@ svg {
 /* chat */
 
 .chat {
+	position: fixed;
+	left: 0;
 	background: white;
 	width: 20em;
 	height: 26em;
-	margin: 3em 2em 4em 2em;
+
 }
 
 .chat ol {
@@ -677,6 +685,6 @@ p[data-status="READ"] span {
 	}
 }
 
-.hide {
+/*.hide {
 	display: none;
-}
+}*/

@@ -13,9 +13,9 @@
 </head>
 <body>
 
-<div id="loaderbox" class="hide">
+<!-- <div id="loaderbox" class="hide">
     <div class="loader"></div>
-</div>
+</div> -->
 
     <main>
     <nav class="menu">
@@ -32,7 +32,7 @@
 
     </nav>
 
-    <section class="login">
+ <!--    <section class="login">
 
         <form action="/" method="post">
 
@@ -50,7 +50,7 @@
 
             <button disabled type="button">Login</button>
         </form>
-    </section>
+    </section> -->
 
     <div class="intro hide">
         <article class="picture">
@@ -330,6 +330,50 @@
         </article>
         </div>
     </main>
+
+<section class="chat">
+            <ol>
+                <li class="you">
+                    <p>
+                        Hey!
+                    </p>
+
+                    <footer>
+                        <p>Posted on <time datatime="2015-01-22T10:25">10:25 AM</time> by you</p>
+                        <p data-status="READ"><span>&#10003;</span><span>&#10003;</span>Has been read</p>
+                    </footer>
+                </li>
+
+                <li class="john">
+                    <p>
+                        Hey! Sorry I was busy
+                    </p>
+
+                    <footer>
+                        <p>Posted on <time datatime="2017-02-03T14:19">2:19 PM</time> by John</p>
+                    </footer>
+                </li>
+
+                <li class="you">
+                    <p>
+                        I sent that 2 years ago
+                    </p>
+
+                    <footer>
+                        <p>Posted on <time datatime="2017-02-03T14:22">2:22 PM</time> by you</p>
+                        <p data-status="DELIVERED"><span>&#10003;</span>Has been delivered</p>
+                    </footer>
+                </li>
+            </ol>
+
+            <form action="/" method="post">
+
+                <textarea name="field-message" id="field-message"></textarea>
+
+                <button type="submit">Send</button>
+
+            </form>
+    </section>
 
 <script src="script.js"></script>
 </body>
