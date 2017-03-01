@@ -225,6 +225,12 @@ progress::-moz-progress-bar {
 	transition: border 1s ease-;
 }
 
+@media (max-width: 25em) {
+	.login form {
+		width: auto;
+	}
+}
+
 .login form:invalid {
 	background: #efefef;
 }
@@ -371,6 +377,9 @@ figure {
 	height: max-content;
 }
 
+@media (max-width: 25em) {
+}
+
 .picture h1:first-of-type {
 	align-self: flex-start;
 	font-family: 'Ampersand';
@@ -413,6 +422,15 @@ figure img:target {
 	max-width: 100%;
 	box-shadow: 0 0 0 50vmax rgba(0, 0, 0, .8);
 	z-index: 200;
+}
+
+@media (max-width: 25em) {
+	.picture figure {
+		margin: 0;
+	}
+  	.picture figure img {
+		width: 100%;
+	}
 }
 
 /* media item */
@@ -669,40 +687,4 @@ p[data-status="READ"] span {
 	height: 2.1em;
 	width: 65%;
 	font-size: .9em;
-}
-
-/* loading screen */
-
-#loaderbox {
-	transition: opacity .8s;
-	position: fixed;
-	top: 0;
-	background: black;
-	width: 100vw;
-	height: 100vh;
-	padding: 1em;
-	z-index: 2000;
-}
-
-@keyframes loader {
-	to { 
-		background-position: -800px 0; 
-	}
-}
-
-.loader {
-	width: 100px; 
-	height: 100px;
-	background: url(http://dabblet.com/img/loader.png) 0 0;
-	animation: loader 1s infinite steps(8);
-	position: fixed;
-	top: 40%;
-	left: 45%;
-	right: 45%;
-}
-
-@media (max-width: 40em) {
-  	.loader {
-		left: 40%;
-	}
 }

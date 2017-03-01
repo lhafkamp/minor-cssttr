@@ -3,15 +3,6 @@ const dialog = document.querySelector('.popup');
 const main = document.querySelector('main');
 const proNav = Array.from(document.querySelectorAll('nav ol li a'));
 const form = Array.from(document.querySelectorAll('form input'));
-const loaderbox = document.querySelector('#loaderbox');
-
-// the definition of hacky
-setTimeout(function() {
-	loaderbox.style.opacity = 0;
-	setTimeout(function() {
-		loaderbox.style.display = 'none';
-	}, 850);
-}, 800);
 
 function openDialog() {
 	dialog.style.display = 'block';
