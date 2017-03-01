@@ -288,6 +288,12 @@ button:hover {
 	border-color: #333333;
 }
 
+button:focus {
+	background: #333333;
+	color: white;
+	border-color: #333333;
+}
+
 /* checkbox idea taken from http://dabblet.com/gist/e269f10328615254e29e */
 
 input[type="checkbox"] {
@@ -317,6 +323,10 @@ input[type="checkbox"]:checked + label::before {
 	vertical-align: -.1em;
 	text-indent: .12em;
 	background: #2ecc71;
+}
+
+input[type="checkbox"]:focus + label::before {
+	box-shadow: 0 0 .1em .1em #2ecc71;
 }
 
 /* dialog styles taken from http://dabblet.com/gist/1326eb460b0dff91d638 */
@@ -567,20 +577,41 @@ svg {
 	position: fixed;
 	top: 7em;
 	left: 0;
-	padding: 2em 2em 4.5em 2em;
+	padding: 1.2em 2em 4.5em 2em;
 	background: #333;
-	border-top-right-radius: 2em;
-	border-bottom-right-radius: 2em;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
 	margin-left: -25em;
 	transition: margin .4s ease;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+}
+
+.chatOption input {
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	top: 0;
+}
+
+.chatOption input:focus + .close {
+	color: #2ecc71;
+}
+
+.chatOption .close {
+	color: white;
+	cursor: pointer;
+	font-size: 2em;
 }
 
 .chat {
+	margin-top: 1em;
 	background: white;
 	width: 20em;
 	height: 26em;
-	border-top-right-radius: 2em;
-	border-bottom-right-radius: 2em;
+	border-top-right-radius: 1em;
+	border-bottom-right-radius: 1em;
 }
 
 .chat ol {
@@ -697,6 +728,6 @@ p[data-status="READ"] span {
 	}
 }
 
-/*.hide {
+.hide {
 	display: none;
-}*/
+}
