@@ -19,7 +19,7 @@ function enableButton() {
 // the definition of hacky
 function nextPage() {
 	loaderbox.style.opacity = 1;
-	loaderbox.style.display = 'block';
+	loaderbox.style.display = 'flex';
 	setTimeout(function() {
 		loaderbox.style.opacity = 0;
 		setTimeout(function() {

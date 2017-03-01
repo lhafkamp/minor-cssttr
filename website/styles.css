@@ -713,13 +713,14 @@ p[data-status="READ"] span {
 /* loading screen */
 
 #loaderbox {
+	justify-content: center;
+	align-items: center;
 	transition: opacity .8s;
 	position: fixed;
 	top: 0;
 	background: black;
 	width: 100vw;
 	height: 100vh;
-	padding: 1em;
 	z-index: 2000;
 }
 
@@ -734,10 +735,6 @@ p[data-status="READ"] span {
 	height: 100px;
 	background: url(http://dabblet.com/img/loader.png) 0 0;
 	animation: loader 1s infinite steps(8);
-	position: fixed;
-	top: 40%;
-	left: 45%;
-	right: 45%;
 }
 
 @media (max-width: 40em) {
