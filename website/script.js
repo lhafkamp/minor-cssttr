@@ -4,6 +4,8 @@ const form = Array.from(document.querySelectorAll('form input'));
 const loaderbox = document.querySelector('#loaderbox');
 const intro = document.querySelector('.intro');
 const login = document.querySelector('.login');
+const chatButton = document.querySelector('.menu ul li:nth-child(3)');
+const chat = document.querySelector('.chatOption');
 
 function enableButton() {
 	if (form[0].value !== '' && form[1].value !== '') {
@@ -27,6 +29,11 @@ function nextPage() {
 	}, 800);
 }
 
+function slideInChat() {
+	chat.style.marginLeft = '0';
+}
+
+chatButton.addEventListener('click', slideInChat);
 button.addEventListener('click', nextPage);
 form[1].addEventListener('input', enableButton);
 
