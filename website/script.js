@@ -32,7 +32,6 @@ function nextPage() {
 }
 
 function slideInChat() {
-	chat.classList.remove('hide');
 	setTimeout(() => {
 		chat.style.marginLeft = '0';
 	}, 100);
