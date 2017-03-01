@@ -746,3 +746,7 @@ p[data-status="READ"] span {
 .hide {
 	display: none;
 }
+
+.show {
+	display: block;
+}
